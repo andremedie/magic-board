@@ -30,7 +30,13 @@ header {
 }
 
 .row {
-    background-color: black;
     width: 600px;
-    height: 80px;
+    display: flex;
+    flex-grow: 1;
+}
+
+.square {
+    min-width: 50px;
+    flex-grow: 1;
+    flex-basis: auto;
 }
