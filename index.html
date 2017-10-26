@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    
+</head>
+<body>
+    <div id="header">
+       <button>START</button>
+    </div>
+
+    <div id="content">
+       
+    </div>
+             
+   <script>
+   var contentDiv = document.getElementById('content');
+
+   var board = document.createElement('div');
+   board.className = 'board';
+   
+    for(var y = 0; y < 8; y++) {
+    addRowToBoard();
+    }
+   
+   contentDiv.appendChild(board);
+
+   function addRowToBoard() {
+    var row = document.createElement('div');
+   row.className = 'row';
+   board.appendChild(row);
+   if (y%2) {
+   row.style.backgroundColor = 'black';
+   } else {
+       row.style.backgroundColor = 'white';
+   }
+    
+   }
+
+   </script>
+
+
+    
+
+</body>
+
+</html>
