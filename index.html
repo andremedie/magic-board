@@ -21,32 +21,29 @@
    var nrOfSquares = 8;
    var contentDiv = document.getElementById('content');
 
-   var board = document.createElement('div');
+   createBoard();
+
+function createBoard() {
+
+    var board = document.createElement('div');
    board.className = 'board';
    
     for(var y = 0; y < nrOfSquares; y++) {
-   var row = addRowToBoard();
+   var row = addRowToBoard(board);
+   
     
 
   for (var x = 0; x < nrOfSquares; x++) {
-        var square = document.createElement('div');
-        square.className = 'square';
-
-        if ((x+y) % 2) {
-   square.style.backgroundColor = 'black';
-   } else {
-       square.style.backgroundColor = 'white';
-   }
-
-        row.appendChild(square);
+       addSquareToRow(x, y, row);
     }
     
 }
-   
+contentDiv.appendChild(board);
+}
 
-    contentDiv.appendChild(board);
+  
 
-    function addRowToBoard() {
+    function addRowToBoard(board) {
     var row = document.createElement('div');
    row.className = 'row';
     
@@ -54,6 +51,21 @@
    return row;
 }
    
+function addSquareToRow(x, y, row) {
+
+    var square = document.createElement('div');
+    square.className = 'square';
+
+    if ((x+y) % 2) {
+square.style.backgroundColor = 'black';
+} else {
+    square.style.backgroundColor = 'white';
+}
+
+    row.appendChild(square);
+
+}
+
    </script>
 
 
