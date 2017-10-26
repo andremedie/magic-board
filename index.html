@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="header">
-       <button>START</button>
+       <button onclick="startProgram()">START</button>
     </div>
 
     <div id="content">
@@ -21,7 +21,15 @@
    var nrOfSquares = 8;
    var contentDiv = document.getElementById('content');
 
-   createBoard();
+    function startProgram() {
+        setInterval(function() {
+            
+          nrOfSquares++;
+          createBoard();
+        }, 500);
+    }
+
+    createBoard();
 
 function createBoard() {
 
@@ -38,6 +46,7 @@ function createBoard() {
     }
     
 }
+contentDiv.innerHTML = "";
 contentDiv.appendChild(board);
 }
 
